@@ -123,7 +123,7 @@ System.out.println("Test1111:"+edtUserName.getText() +"End/");
                       //  String Email = edtEmail.getText().toString().trim();
                     //    String Password = edtPassword.getText().toString().trim();
                         System.out.println("Test2:"+edtUserName);
-                        User user = new User(edtICno.getText().toString(), edtAddress.getText().toString(),edtPassword.getText().toString(), edtEmail.getText().toString());
+                        User user = new User(edtUserName.getText().toString(),edtICno.getText().toString(), edtAddress.getText().toString(),edtPassword.getText().toString(), edtEmail.getText().toString());
                         table_user.child(edtUserName.getText().toString()).setValue(user);
                         Toast.makeText(user_signup.this, "Sign up successfully!!", Toast.LENGTH_SHORT).show();
                         finish();

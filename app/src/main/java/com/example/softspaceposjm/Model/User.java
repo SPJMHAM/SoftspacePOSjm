@@ -1,7 +1,7 @@
 package com.example.softspaceposjm.Model;
 // EditText edtUserName,edtICno,edtAddress,edtPassword,edtConfirmPassword,edtEmail;
 public class User {
-   // private String UserName;
+    private String UserName;
     private String ICno;
     private String Address;
     private String Password;
@@ -11,22 +11,33 @@ public class User {
 
     }
 
-/*
-*   public User(String name, String password, String email,String image) {
-        this.name = name;
-        Password = password;
-        Email = email;
+    public String getUserName() {
+        return UserName;
     }
-*
-* */
-public User( String ICno, String Address,String Password, String Email){
-  //  this.UserName = UserName;
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
+    /*
+    *   public User(String name, String password, String email,String image) {
+            this.name = name;
+            Password = password;
+            Email = email;
+        }
+    *
+    * */
+public User( String UserName,String ICno, String Address,String Password, String Email){
+    this.UserName = UserName;
     this.ICno = ICno;
     this.Address = Address;
     this.Password = Password;
 
     this.Email = Email;
 }
+
+
+
 
     public String getICno() {
         return ICno;

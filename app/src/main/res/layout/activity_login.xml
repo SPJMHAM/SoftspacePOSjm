@@ -7,7 +7,7 @@
     tools:context=".Login">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_login"
         android:layout_width="132dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,12 +19,12 @@
         app:srcCompat="@drawable/loginbutton" />
 
     <EditText
-        android:id="@+id/edtusername"
+        android:id="@+id/edtUserName"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="username"
+        android:hint="username"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -33,12 +33,12 @@
         app:layout_constraintVertical_bias="0.542" />
 
     <EditText
-        android:id="@+id/edtpassword"
+        android:id="@+id/edtPassword"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="password"
+        android:inputType="textPassword"
+        android:hint="password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -76,8 +76,12 @@
         android:id="@+id/imageView"
         android:layout_width="336dp"
         android:layout_height="242dp"
-        app:srcCompat="@drawable/welcome2"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="83dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@drawable/welcome2" />
 
 </android.support.constraint.ConstraintLayout>

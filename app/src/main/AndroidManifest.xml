@@ -22,10 +22,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login">
+
+        </activity>
         <activity android:name=".Registration" />
         <activity android:name=".List" />
-        <activity android:name=".List_Of_Jobs" />
+        <activity android:name=".List_Of_Jobs" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".TestM1" />
         <activity android:name=".Details" />
         <activity android:name=".TestRis" />
@@ -56,11 +65,7 @@
         <activity android:name=".user_dashboard" />
         <activity android:name=".login_page1" />
         <activity android:name=".user_signup">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".DetailsPage1" />
         <activity android:name=".MainActivity" />

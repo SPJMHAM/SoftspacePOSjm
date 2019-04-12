@@ -1,4 +1,4 @@
-package com.example.softspaceposjm.Req_Service;
+package com.example.softspaceposjm;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.example.softspaceposjm.R;
+
 import com.example.softspaceposjm.Model.JobInfo1;
 import com.example.softspaceposjm.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -21,42 +21,42 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-
 import java.util.ArrayList;
 
-public class past_Fragment extends Fragment {
+public class FragmentThree extends Fragment {
     RecyclerView recycle_menu;
     RecyclerView.LayoutManager layoutManager;
     DatabaseReference jobinfo;
-    ArrayList<JobInfo1> items = new ArrayList<>();
-    int Test = 0;
+
+int Test = 0;
 
     FirebaseRecyclerAdapter <JobInfo1, MenuViewHolder> adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+       //
+//final NavigationView navigationView = (NavigationView) getView().findViewById(R.id.nav_view);
         System.out.println("Test 11111111:"+":End");
-        View view = inflater.inflate(R.layout.request_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity_fragment_three, container, false);
 
-        Test = 1;
+        Test = 1 ;
         recycle_menu = view. findViewById(R.id.recycle_menu1);
         recycle_menu.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
 
         recycle_menu.setLayoutManager(layoutManager);
 
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+
         jobinfo = FirebaseDatabase.getInstance().getReference().child("ListOfJob1");
         System.out.println("Test 555555555:"+":End");
-        String searchBoxInput = "Past";
-        // Query query = jobinfo.orderByKey();
-        //    Query query = allUserDatabaseRef.orderByChild("registerEventName").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
-        Query query = jobinfo.orderByChild("Status1").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
+        Query query = jobinfo.orderByKey();
         System.out.println("Test 11111166666611:"+":End");
         FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<JobInfo1>().setQuery(query, JobInfo1.class).build();
         adapter = new FirebaseRecyclerAdapter<JobInfo1, MenuViewHolder>(firebaseRecyclerOptions) {
 
             @NonNull
             @Override
+
+
             public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_list,viewGroup,false);
                 return new MenuViewHolder(view);
@@ -66,7 +66,8 @@ public class past_Fragment extends Fragment {
             @Override
             public void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull JobInfo1 model) {
                 System.out.println("Test 222:"+":End");
-
+//TheJobName1,TheNoOfGuard1,TheDate1,TheLocation1,TheStatus1,TheType1
+                //  holder.txtRegisterEventId.setText(model.getRegisterEventId());
                 holder.txtTheJobName1.setText(model.getJobName1());
                 System.out.println("Test 333:"+":End");
                 System.out.println("Test Name:"+model.getJobName1()+":End");
@@ -78,6 +79,8 @@ public class past_Fragment extends Fragment {
                 System.out.println("Test Test:"+Test+":End");
 
             }
+
+
         };
         recycle_menu.setAdapter(adapter);
 

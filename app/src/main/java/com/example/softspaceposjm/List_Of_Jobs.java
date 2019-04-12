@@ -30,7 +30,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.bumptech.glide.Glide;
+
 import com.example.softspaceposjm.Model.JobInfo1;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.maps.GoogleMap;
@@ -152,7 +152,7 @@ public class List_Of_Jobs extends AppCompatActivity {
 //--
         //--Dialog--
 
-      //  viewTable = getLayoutInflater().inflate(R.layout.activity_detail_event_info,null);    //======
+        //  viewTable = getLayoutInflater().inflate(R.layout.activity_detail_event_info,null);    //======
 //        eventid1 = viewTable.findViewById(R.id.EventId1);
 //        eventName = viewTable.findViewById(R.id.EventName1);
 //        eventName2 = viewTable.findViewById(R.id.EventName2);
@@ -322,7 +322,7 @@ public class List_Of_Jobs extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull JobInfo1 model) {
 //TheJobName1,TheNoOfGuard1,TheDate1,TheLocation1,TheStatus1,TheType1
-              //  holder.txtRegisterEventId.setText(model.getRegisterEventId());
+                //  holder.txtRegisterEventId.setText(model.getRegisterEventId());
                 holder.txtTheJobName1.setText(model.getJobName1());
                 holder.txtTheNoOfGuard1.setText(model.getNoOfGuard1());
                 holder.txtTheDate1.setText(model.getDate1());

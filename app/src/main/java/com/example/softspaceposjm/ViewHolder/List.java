@@ -1,7 +1,9 @@
-package com.example.softspaceposjm;
+package com.example.softspaceposjm.ViewHolder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.softspaceposjm.R;
 
 public class List extends AppCompatActivity {
 

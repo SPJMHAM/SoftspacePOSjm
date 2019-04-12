@@ -6,4 +6,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="risk_value">High security for daily protection enable to perform riskfree activities.</string>
+    <string name="thanks_for_placing">Thanks for placing your order with MidGard!</string>
+    <string name="order_is_now_pending">Your order is now pending and will</string>
+    <string name="proceed">be proceed for offering.</string>
+    <string name="view_request">View Request</string>
 </resources>

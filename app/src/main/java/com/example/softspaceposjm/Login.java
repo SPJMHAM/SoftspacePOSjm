@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.softspaceposjm.services.*;
+import com.example.softspaceposjm.Common.CUser;
+import com.example.softspaceposjm.services.serviceInfo_Activity;
 import com.example.softspaceposjm.Model.User;
+import com.example.softspaceposjm.services.Services_Activity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +26,7 @@ public class Login extends AppCompatActivity {
 
     EditText edtUsername, edtPassword;
     ImageButton btn_login;
+    Button btn_register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +35,19 @@ public class Login extends AppCompatActivity {
         edtUsername = (EditText) findViewById(R.id.edtUserName);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         btn_login = (ImageButton) findViewById(R.id.btn_login);
+        btn_register = (Button) findViewById(R.id.btn_signup);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User1");
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Registration.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -87,11 +102,11 @@ public class Login extends AppCompatActivity {
 
 
                                         Toast.makeText(Login.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                                        Intent home = new Intent(Login.this, Midguard_customer_dashboard.class);
+                                        Intent home = new Intent(Login.this, Services_Activity.class);
                                         //    MainMenuPage.putExtra("loginName",1324557);
                                         // home.putExtra("Name",adapter.get)
 
-                                        //    Common.currentUser = user;
+                                            CUser.currentUser = user;
                                         //  edtEmail.getText().toString()
                                         //    Common.getCurrentEmail = user;
                                         //    Common.getCurrentImage = user;

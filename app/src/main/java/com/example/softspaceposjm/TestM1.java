@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.softspaceposjm.Common.CUser;
+import com.example.softspaceposjm.Model.service_Info;
+import com.example.softspaceposjm.services.service2_Activity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -35,6 +38,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.util.List;
@@ -45,7 +50,7 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
     TextView placeNameText;
     TextView placeAddressText;
     WebView attributionText;
-    Button getPlaceButton;
+    Button getPlaceButton,btnMNext;
     private final static int MY_PERMISSION_FINE_LOCATION = 101;
     private final static int PLACE_PICKER_REQUEST = 1;
 
@@ -55,6 +60,8 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
 
+    private FirebaseDatabase database;
+    private DatabaseReference userRef, service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +72,23 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
         mapFragment.getMapAsync(this);
         requestPermission();
 
+
         placeNameText = (TextView) findViewById(R.id.tvPlaceName);
         placeAddressText = (TextView) findViewById(R.id.tvPlaceAddress);
         attributionText = (WebView) findViewById(R.id.wvAttribution);
         getPlaceButton = (Button) findViewById(R.id.btGetPlace);
+        btnMNext = (Button)findViewById(R.id.btnMNext);
+
+
+        database = FirebaseDatabase.getInstance();
+        userRef = database.getReference("User");
+        service = database.getReference("service_Info");
+
+
+        //final int progressValue = Integer.parseInt(NoOfPax);
+
+
+
         System.out.println("Testing111");
         getPlaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +111,11 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
 //        Intent intent = new Intent(TestM1.this, TestM1.class);
 //        startActivity(intent);
 //        finish();
+//tvPlaceAddress
+
+
+
+
     }
 //---
 
@@ -248,6 +273,28 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                 Place place = PlacePicker.getPlace(TestM1.this, data);
                 placeNameText.setText(place.getName());
                 placeAddressText.setText(place.getAddress());
+
+                final String TestCurrentUser;
+                TestCurrentUser = CUser.currentUser.getUserName();
+                Intent b = this.getIntent();
+
+                final String type = b.getStringExtra("Type");
+                final String nationality = b.getStringExtra("nationality");
+                final String getStatus = b.getStringExtra("status");
+                final String NoOfPax = b.getStringExtra("pax");
+                final  String Address1 =   placeAddressText.getText().toString() ;
+
+
+                btnMNext.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        startActivity(new Intent(TestM1.this, service2_Activity.class));
+                        service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, NoOfPax,Address1);
+                    }
+                });
+
+
                 if (place.getAttributions() == null) {
                     attributionText.loadData("no attribution", "text/html; charset=utf-8", "UFT-8");
                 } else {

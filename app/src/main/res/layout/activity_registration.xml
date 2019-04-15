@@ -7,12 +7,13 @@
     tools:context=".Registration">
 
     <EditText
-        android:id="@+id/edtpassword"
+        android:id="@+id/edtPassword"
         android:layout_width="312dp"
         android:layout_height="51dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Password"
+
+        android:hint="Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,12 +22,13 @@
         app:layout_constraintVertical_bias="0.532" />
 
     <EditText
-        android:id="@+id/edtcpassword"
+        android:id="@+id/edtConfirmPassword"
         android:layout_width="312dp"
         android:layout_height="51dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Confirm Password"
+        android:hint="Confirm Password"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -54,7 +56,7 @@
         android:layout_height="51dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email Address"
+        android:hint="Email Address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,12 +65,12 @@
         app:layout_constraintVertical_bias="0.423" />
 
     <EditText
-        android:id="@+id/edtIC"
+        android:id="@+id/edtICno"
         android:layout_width="312dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="IC Number"
+        android:hint="IC Number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -77,12 +79,12 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <EditText
-        android:id="@+id/edtname"
+        android:id="@+id/edtUserName"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Full name (as per IC)"
+        android:hint="Full name (as per IC)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintLeft_toLeftOf="parent"

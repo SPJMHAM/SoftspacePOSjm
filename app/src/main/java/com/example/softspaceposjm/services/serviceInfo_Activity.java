@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.softspaceposjm.R;
 import com.example.softspaceposjm.Common.CUser;
 import com.example.softspaceposjm.Model.service_Info;
+import com.example.softspaceposjm.TestM1;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -71,6 +72,7 @@ public class serviceInfo_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String type = null;
                 String nationality = null;
+                String getStatus = null;
                 if(arm.isChecked()){
                     type = "Armed";
                 }
@@ -83,10 +85,27 @@ public class serviceInfo_Activity extends AppCompatActivity {
                 else if(foreigner.isChecked()){
                     nationality = "Foreigners";
                 }
-                service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality, progress_value);
 
-                //startActivity(new Intent(serviceInfo_Activity.this, TestM1.class));
-                startActivity(new Intent(serviceInfo_Activity.this, service2_Activity.class));
+                if(type != null && nationality != null && NoOfAgent != null)
+                {
+                    getStatus = "Request";
+                }
+                String pax = Integer.toString(progress_value);
+
+                Intent intent = new Intent(serviceInfo_Activity.this, TestM1.class);
+                intent.putExtra("Type", type);
+                intent.putExtra("nationality", nationality);
+                intent.putExtra("status", getStatus);
+                intent.putExtra("pax", pax);
+                System.out.print("Testing1111: " + type+ ":End.");
+                String TestValue = "HHHHHHHHH";
+                intent.putExtra("Halo",TestValue);
+                System.out.println("TestHalo:"+ TestValue);
+                startActivity(intent);
+
+
+                //service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, progress_value);
+//                startActivity(new Intent(serviceInfo_Activity.this, TestM1.class));
             }
 
 

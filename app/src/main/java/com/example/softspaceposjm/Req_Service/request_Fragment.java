@@ -47,9 +47,10 @@ public class request_Fragment extends Fragment {
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         jobinfo = FirebaseDatabase.getInstance().getReference().child("ListOfJob1");
         System.out.println("Test 555555555:"+":End");
-        String searchBoxInput = "Request";
+
        // Query query = jobinfo.orderByKey();
         //    Query query = allUserDatabaseRef.orderByChild("registerEventName").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
+        String searchBoxInput = "Request";
         Query query = jobinfo.orderByChild("Status1").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
         System.out.println("Test 11111166666611:"+":End");
         FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<JobInfo1>().setQuery(query, JobInfo1.class).build();

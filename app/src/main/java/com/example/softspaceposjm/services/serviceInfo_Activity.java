@@ -73,6 +73,8 @@ public class serviceInfo_Activity extends AppCompatActivity {
                 String type = null;
                 String nationality = null;
                 String getStatus = null;
+                String reqDate = "4 April - 8 April 2019, 9am - 6pm";
+                String jobTitle = "Public Figure Protection";
                 if(arm.isChecked()){
                     type = "Armed";
                 }
@@ -97,15 +99,10 @@ public class serviceInfo_Activity extends AppCompatActivity {
                 intent.putExtra("nationality", nationality);
                 intent.putExtra("status", getStatus);
                 intent.putExtra("pax", pax);
-                System.out.print("Testing1111: " + type+ ":End.");
-                String TestValue = "HHHHHHHHH";
-                intent.putExtra("Halo",TestValue);
-                System.out.println("TestHalo:"+ TestValue);
+                intent.putExtra("date", reqDate);
+                intent.putExtra("job", jobTitle);
                 startActivity(intent);
 
-
-                //service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, progress_value);
-//                startActivity(new Intent(serviceInfo_Activity.this, TestM1.class));
             }
 
 

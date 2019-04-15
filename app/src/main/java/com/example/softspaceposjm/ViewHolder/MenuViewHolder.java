@@ -13,7 +13,7 @@ import com.example.softspaceposjm.R;
 public class MenuViewHolder extends RecyclerView.ViewHolder {
     // public TextView fileName, txtRegisterEventId, txtRegisterEventStartDate, txtRegisterEventName, txtContact_number, txtRegisterEventRadiogroup, txtRegisterEventLocation,txtPrice,txtCapacity;
     //   public ImageView imageView;
-    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtTheType1;
+    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtTheType1,txtFurtherStatus;
     //TheJobName1,TheNoOfGuard1,TheDate1,TheLocation1,TheStatus1,TheType1
     public MenuViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -25,6 +25,7 @@ public class MenuViewHolder extends RecyclerView.ViewHolder {
         txtTheStatus1 = itemView.findViewById(R.id.TheStatus1);
         //imageView = itemView.findViewById(R.id.item_image);
         txtTheType1 = itemView.findViewById(R.id.TheType1);
+        txtFurtherStatus = itemView.findViewById(R.id.TheFurtherStatus);
         //  txtPrice = itemView.findViewById(R.id.Price);
         //   txtCapacity = itemView.findViewById(R.id.Capacity);
 

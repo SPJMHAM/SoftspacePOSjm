@@ -282,15 +282,18 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                 final String nationality = b.getStringExtra("nationality");
                 final String getStatus = b.getStringExtra("status");
                 final String NoOfPax = b.getStringExtra("pax");
-                final  String Address1 =   placeAddressText.getText().toString() ;
-
-
+                final String Address1 =   placeAddressText.getText().toString() ;
+                final String reqDate = b.getStringExtra("date");
+                final String jobTitle = b.getStringExtra("job");
+//Guards(Land Based)
+                final String NoOfGuards1= (NoOfPax + "Guards(Land Based)");
+                final String furtherStatus  = "New!";
                 btnMNext.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                         startActivity(new Intent(TestM1.this, service2_Activity.class));
-                        service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, NoOfPax,Address1);
+                        service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, NoOfGuards1,Address1, reqDate, jobTitle,furtherStatus);
                     }
                 });
 

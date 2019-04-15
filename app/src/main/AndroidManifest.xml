@@ -23,14 +23,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Login">
+
+        </activity>
+        <activity android:name=".Req_Service.status">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Req_Service.status">
-
 
         </activity>
         <activity android:name=".Registration" />
@@ -68,10 +68,6 @@
         <activity android:name=".user_dashboard" />
         <activity android:name=".login_page1" />
         <activity android:name=".user_signup">
-
-
-
-
         </activity>
         <activity android:name=".PermissionAccess" />
         <activity android:name=".FingerprintAccess" />

@@ -10,8 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.softspaceposjm.Common.CUser;
 import com.example.softspaceposjm.R;
-import com.example.softspaceposjm.Model.JobInfo1;
+import com.example.softspaceposjm.Model.service_Info;
 import com.example.softspaceposjm.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -27,11 +29,12 @@ import java.util.ArrayList;
 public class booked_Fragment extends Fragment {
     RecyclerView recycle_menu;
     RecyclerView.LayoutManager layoutManager;
-    DatabaseReference jobinfo;
-    ArrayList<JobInfo1> items = new ArrayList<>();
+    //  DatabaseReference jobinfo;
+    DatabaseReference service_Info;
+    ArrayList<service_Info> items = new ArrayList<>();
     int Test = 0;
 
-    FirebaseRecyclerAdapter <JobInfo1, MenuViewHolder> adapter;
+    FirebaseRecyclerAdapter <service_Info, MenuViewHolder> adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         System.out.println("Test 11111111:"+":End");
@@ -43,17 +46,20 @@ public class booked_Fragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
 
         recycle_menu.setLayoutManager(layoutManager);
-
+        final String TestCurrentUser;
+        // TestCurrentUser = CUser.currentUser.getUserName();
+        TestCurrentUser = "ggggjhjh";
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-        jobinfo = FirebaseDatabase.getInstance().getReference().child("ListOfJob1");
+        service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
         System.out.println("Test 555555555:"+":End");
-        String searchBoxInput = "Booked";
+
         // Query query = jobinfo.orderByKey();
         //    Query query = allUserDatabaseRef.orderByChild("registerEventName").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
-        Query query = jobinfo.orderByChild("Status1").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
+        String searchBoxInput = "booked";
+        Query query = service_Info.orderByChild("status").startAt(searchBoxInput).endAt(searchBoxInput+"\uf8ff");
         System.out.println("Test 11111166666611:"+":End");
-        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<JobInfo1>().setQuery(query, JobInfo1.class).build();
-        adapter = new FirebaseRecyclerAdapter<JobInfo1, MenuViewHolder>(firebaseRecyclerOptions) {
+        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<service_Info>().setQuery(query, service_Info.class).build();
+        adapter = new FirebaseRecyclerAdapter<service_Info, MenuViewHolder>(firebaseRecyclerOptions) {
 
             @NonNull
             @Override
@@ -64,17 +70,18 @@ public class booked_Fragment extends Fragment {
             }
 
             @Override
-            public void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull JobInfo1 model) {
+            public void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull service_Info model) {
                 System.out.println("Test 222:"+":End");
 
-                holder.txtTheJobName1.setText(model.getJobName1());
+                holder.txtTheJobName1.setText(model.getJobTitle());
                 System.out.println("Test 333:"+":End");
-                System.out.println("Test Name:"+model.getJobName1()+":End");
-                holder.txtTheNoOfGuard1.setText(model.getNoOfGuard1());
-                holder.txtTheDate1.setText(model.getDate1());
-                holder.txtTheLocation1.setText(model.getLocation1());
-                holder.txtTheStatus1.setText(model.getStatus1());
-                holder.txtTheType1.setText(model.getType1());
+                System.out.println("Test Name:"+model.getJobTitle()+":End");
+
+                holder.txtTheNoOfGuard1.setText(model.getNoOfPax());
+                holder.txtTheDate1.setText(model.getReqDate());
+                holder.txtTheLocation1.setText(model.getAddressInfo());
+                holder.txtTheStatus1.setText(model.getStatus());
+
                 System.out.println("Test Test:"+Test+":End");
 
             }

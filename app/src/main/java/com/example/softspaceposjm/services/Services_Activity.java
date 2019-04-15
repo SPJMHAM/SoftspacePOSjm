@@ -23,7 +23,12 @@ public class Services_Activity extends AppCompatActivity {
         landView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 startActivity(new Intent(Services_Activity.this, serviceInfo_Activity.class));
+
+
+
             }
         });
 

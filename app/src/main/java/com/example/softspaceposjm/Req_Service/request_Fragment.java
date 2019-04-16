@@ -1,5 +1,6 @@
 package com.example.softspaceposjm.Req_Service;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,13 +9,20 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.softspaceposjm.Common.CUser;
+import com.example.softspaceposjm.Login;
+import com.example.softspaceposjm.Login;
 import com.example.softspaceposjm.R;
 import com.example.softspaceposjm.Model.service_Info;
+import com.example.softspaceposjm.RecyclerItemClickListener;
+import com.example.softspaceposjm.TestM1;
 import com.example.softspaceposjm.ViewHolder.MenuViewHolder;
+import com.example.softspaceposjm.services.Services_Activity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,12 +53,32 @@ public class request_Fragment extends Fragment {
         recycle_menu.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
 
+
         recycle_menu.setLayoutManager(layoutManager);
         final String TestCurrentUser;
        // TestCurrentUser = CUser.currentUser.getUserName();
         TestCurrentUser = "ggggjhjh";
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
+        recycle_menu.addOnItemTouchListener(
+                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        System.out.print("ÄAAAA");
+                        // do whatever
+                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Login.class);
+                        startActivity(myIntent);
+                        //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
+                        //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+                        //    storageReference.child("profileImageUrl").child(filename).delete();
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                        System.out.print("BBBBB");
+                    }
+                })
+        );
+
         System.out.println("Test 555555555:"+":End");
 
        // Query query = jobinfo.orderByKey();
@@ -94,9 +122,14 @@ public class request_Fragment extends Fragment {
 
             }
         };
+
+
         recycle_menu.setAdapter(adapter);
 
         return view;
+
+
+
     }
 
 

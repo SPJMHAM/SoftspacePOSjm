@@ -110,6 +110,7 @@ public class Login extends AppCompatActivity {
                                         //  edtEmail.getText().toString()
                                         //    Common.getCurrentEmail = user;
                                         //    Common.getCurrentImage = user;
+
                                         startActivity(home);
                                         finish();
                                     } else {

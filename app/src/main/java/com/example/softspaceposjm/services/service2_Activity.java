@@ -2,6 +2,7 @@ package com.example.softspaceposjm.services;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,9 +15,12 @@ import java.text.DateFormat;
 import java.time.Year;
 import java.util.Calendar;
 import com.example.softspaceposjm.R;
+import com.example.softspaceposjm.confirmation;
+import com.example.softspaceposjm.requestSuccess;
 
 public class service2_Activity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     private Button datetime;
+    private Button btnRequestComplete;
     private TextView shwDateTime;
     int day, month, year, hour, minute;
     int day_x, month_x, year_X, hour_x, minute_x;
@@ -27,6 +31,7 @@ public class service2_Activity extends AppCompatActivity implements DatePickerDi
 
         datetime = findViewById(R.id.datetimeBtn);
         shwDateTime = findViewById(R.id.DateTimeTxt);
+        btnRequestComplete = (Button)findViewById(R.id.btnRequestComplete);
 
         datetime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +40,16 @@ public class service2_Activity extends AppCompatActivity implements DatePickerDi
                 year = calendar.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog datePickerDialog = new DatePickerDialog(service2_Activity.this, service2_Activity.this,year,month,day);
                 datePickerDialog.show();
+            }
+        });
+
+        //--
+        btnRequestComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(service2_Activity.this, confirmation.class));
+
             }
         });
     }

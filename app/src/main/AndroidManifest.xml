@@ -22,10 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TestChgStatus"></activity>
         <activity android:name=".Login">
-
-        </activity>
-        <activity android:name=".Req_Service.status">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,14 +31,19 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Registration" />
+        <activity android:name=".Req_Service.status">
 
+        </activity>
+        <activity android:name=".Registration" />
         <activity android:name=".services.service2_Activity" />
         <activity android:name=".services.serviceInfo_Activity" />
         <activity android:name=".Midguard_customer_dashboard" />
         <activity android:name=".services.Services_Activity" />
         <activity android:name=".TestM1" />
         <activity android:name=".Details" />
+        <activity android:name=".confirmation" />
+        <activity android:name=".requestSuccess" />
+        <activity android:name=".bookingSuccess" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" />
@@ -67,13 +70,10 @@
         <activity android:name=".sea_services" />
         <activity android:name=".user_dashboard" />
         <activity android:name=".login_page1" />
-        <activity android:name=".user_signup">
-        </activity>
+        <activity android:name=".user_signup"></activity>
         <activity android:name=".PermissionAccess" />
         <activity android:name=".FingerprintAccess" />
-        <activity android:name=".RegistrationComplete" >
-
-        </activity>
+        <activity android:name=".RegistrationComplete"></activity>
         <activity android:name=".DetailsPage1" />
         <activity android:name=".MainActivity" />
     </application>

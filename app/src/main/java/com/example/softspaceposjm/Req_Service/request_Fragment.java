@@ -10,11 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.softspaceposjm.Login;
 import com.example.softspaceposjm.R;
 import com.example.softspaceposjm.Model.service_Info;
 import com.example.softspaceposjm.RecyclerItemClickListener;
+import com.example.softspaceposjm.TestChgStatus;
 import com.example.softspaceposjm.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -56,9 +58,15 @@ public class request_Fragment extends Fragment {
         recycle_menu.addOnItemTouchListener(
                 new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
+
+
+                        final String id = ((TextView)view.findViewById(R.id.TheJobName1)).getText().toString();
+
+                       System.out.println("TEST ID :"+  id +":End");
+
                         System.out.print("ÄAAAA");
                         // do whatever
-                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Login.class);
+                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), TestChgStatus.class);
                         startActivity(myIntent);
                         //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
                         //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();

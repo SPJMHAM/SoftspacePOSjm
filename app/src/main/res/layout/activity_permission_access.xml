@@ -8,24 +8,75 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="432dp"
-        android:layout_height="934dp"
+        android:layout_width="207dp"
+        android:layout_height="191dp"
+        app:srcCompat="@drawable/icn_permission"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="67dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/permissionaccess" />
+        app:layout_constraintVertical_bias="0.124"/>
 
-    <ImageButton
-        android:id="@+id/btn_permitAccess"
-        android:layout_width="151dp"
-        android:layout_height="37dp"
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="285dp"
+        android:layout_height="45dp"
+        android:text="Permission Access"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.733"
-        app:srcCompat="@drawable/allowaccessbtn" />
+        app:layout_constraintVertical_bias="0.392" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="383dp"
+        android:layout_height="169dp"
+        android:text="MidGuard would like to access your
+location, camera and storage."
+        android:textAlignment="center"
+
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="285dp"
+        android:layout_height="64dp"
+        android:text="  Back to Home"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <Button
+        android:id="@+id/btn_allow"
+        android:layout_width="160dp"
+        android:layout_height="61dp"
+        android:background="@drawable/btn_login"
+        android:text="Allow Access"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
+
 </android.support.constraint.ConstraintLayout>

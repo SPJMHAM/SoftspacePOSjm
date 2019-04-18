@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.softspaceposjm.Login;
+import com.example.softspaceposjm.Offers;
 import com.example.softspaceposjm.R;
 import com.example.softspaceposjm.Model.service_Info;
 import com.example.softspaceposjm.RecyclerItemClickListener;
@@ -58,7 +59,7 @@ public class request_Fragment extends Fragment {
                     @Override public void onItemClick(View view, int position) {
                         System.out.print("ÄAAAA");
                         // do whatever
-                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Login.class);
+                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Offers.class);
                         startActivity(myIntent);
                         //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
                         //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();

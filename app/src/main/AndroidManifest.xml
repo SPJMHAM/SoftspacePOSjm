@@ -22,19 +22,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        <activity android:name=".services.req_done">
 
         </activity>
-        <activity android:name=".Req_Service.status">
+        <activity android:name=".services.req_comfirm">
+
+        </activity>
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Req_Service.status">
 
         </activity>
         <activity android:name=".Registration" />
-
         <activity android:name=".services.service2_Activity" />
         <activity android:name=".services.serviceInfo_Activity" />
         <activity android:name=".Midguard_customer_dashboard" />
@@ -67,15 +71,26 @@
         <activity android:name=".sea_services" />
         <activity android:name=".user_dashboard" />
         <activity android:name=".login_page1" />
-        <activity android:name=".user_signup">
-        </activity>
-        <activity android:name=".PermissionAccess" />
-        <activity android:name=".FingerprintAccess" />
-        <activity android:name=".RegistrationComplete" >
+        <activity android:name=".user_signup" />
+        <activity android:name=".PermissionAccess" >
 
         </activity>
+        <activity android:name=".FingerprintAccess" />
+        <activity android:name=".RegistrationComplete" />
         <activity android:name=".DetailsPage1" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".chicoDetails">
+
+        </activity>
+        <activity android:name=".Offers">
+
+        </activity>
+        <activity android:name=".bookingSuccess">
+
+        </activity>
+        <activity android:name=".ServiceBooked">
+
+        </activity>
     </application>
 
 </manifest>

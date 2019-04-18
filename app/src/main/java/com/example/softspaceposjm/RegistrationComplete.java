@@ -4,25 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import com.example.softspaceposjm.services.serviceInfo_Activity;
+import android.widget.Button;
 
 public class RegistrationComplete extends AppCompatActivity {
 
-    ImageButton btn_nextpage;
+    private Button btn_next1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_complete);
 
-        btn_nextpage = (ImageButton) findViewById(R.id.btn_RegisterComplete);
+        btn_next1 = findViewById(R.id.hireBtn);
 
-        btn_nextpage.setOnClickListener(new View.OnClickListener() {
+        btn_next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationComplete.this, serviceInfo_Activity.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(RegistrationComplete.this,chicoDetails.class));
             }
         });
     }

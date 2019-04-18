@@ -10,6 +10,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 public class Registration extends AppCompatActivity {
     EditText edtUserName,edtICno,edtAddress,edtPassword,edtConfirmPassword,edtEmail;
     Button btnRegister, btnLogin;
-    ImageButton btnNext;
+    ImageButton btnNext,image;
     String matchPassword ;
     String matchPassword1 ;
 
@@ -34,6 +35,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         btnNext = (ImageButton)findViewById(R.id.btn_next);
+        image = findViewById(R.id.imageButton2);
         // edtName = (MaterialEditText)findViewById(R.id.edtName);
         edtUserName = (EditText)findViewById(R.id.edtUserName);
         edtICno = (EditText)findViewById(R.id.edtICno);
@@ -67,13 +69,10 @@ public class Registration extends AppCompatActivity {
                             Toast.makeText(Registration.this, "Name already register", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        // EditText edtUserName,edtICno,edtAddress,edtPassword,edtConfirmPassword,edtEmail;
                         Intent intent = new Intent(Registration.this, PermissionAccess.class);
                         startActivity(intent);
                         finish();
                         String TempText = "Empty";
-                        //  String Email = edtEmail.getText().toString().trim();
-                        //    String Password = edtPassword.getText().toString().trim();
                         System.out.println("Test2:"+edtUserName);
                         User user = new User(edtUserName.getText().toString(),edtICno.getText().toString(), TempText,edtPassword.getText().toString(), edtEmail.getText().toString());
                         table_user.child(edtUserName.getText().toString()).setValue(user);
@@ -91,6 +90,18 @@ public class Registration extends AppCompatActivity {
 
 
 
+            }
+        });
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                image.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivity(intent);
+                    }
+                });
             }
         });
 

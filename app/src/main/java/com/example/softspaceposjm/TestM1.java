@@ -217,7 +217,7 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(latLng).title(location11));
                 mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                Toast.makeText(getApplicationContext(),address.getLatitude()+" "+address.getLongitude(),Toast.LENGTH_LONG).show();
+
                 //move map camera
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
@@ -293,15 +293,16 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                     public void onClick(View v) {
 
                         startActivity(new Intent(TestM1.this, service2_Activity.class));
+                      //  service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
                         service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, NoOfGuards1,Address1, reqDate, jobTitle,furtherStatus);
                     }
                 });
 
 
                 if (place.getAttributions() == null) {
-                    attributionText.loadData("no attribution", "text/html; charset=utf-8", "UFT-8");
+                //    attributionText.loadData("no attribution", "text/html; charset=utf-8", "UFT-8");
                 } else {
-                    attributionText.loadData(place.getAttributions().toString(), "text/html; charset=utf-8", "UFT-8");
+               //     attributionText.loadData(place.getAttributions().toString(), "text/html; charset=utf-8", "UFT-8");
                 }
             }
         }

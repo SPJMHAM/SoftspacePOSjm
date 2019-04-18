@@ -75,7 +75,7 @@ int Test = 0;
                 holder.txtTheDate1.setText(model.getDate1());
                 holder.txtTheLocation1.setText(model.getLocation1());
                 holder.txtTheStatus1.setText(model.getStatus1());
-                holder.txtTheType1.setText(model.getType1());
+               // holder.txtTheType1.setText(model.getType1());
                 System.out.println("Test Test:"+Test+":End");
 
             }

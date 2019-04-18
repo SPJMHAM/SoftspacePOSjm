@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.softspaceposjm.Login;
 import com.example.softspaceposjm.Offers;
@@ -54,24 +55,7 @@ public class request_Fragment extends Fragment {
         TestCurrentUser = "ggggjhjh";
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
-        recycle_menu.addOnItemTouchListener(
-                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        System.out.print("ÄAAAA");
-                        // do whatever
-                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Offers.class);
-                        startActivity(myIntent);
-                        //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
-                        //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-                        //    storageReference.child("profileImageUrl").child(filename).delete();
-                    }
 
-                    @Override public void onLongItemClick(View view, int position) {
-                        // do whatever
-                        System.out.print("BBBBB");
-                    }
-                })
-        );
 
         System.out.println("Test 555555555:"+":End");
 
@@ -105,7 +89,7 @@ public class request_Fragment extends Fragment {
                 holder.txtTheDate1.setText(model.getReqDate());
                 holder.txtTheLocation1.setText(model.getAddressInfo());
                 holder.txtTheStatus1.setText(model.getStatus());
-
+                holder.txtserviceID.setText(model.getServiceID());
 
 
                 holder.txtFurtherStatus.setText(model.getFurtherStatus());
@@ -116,7 +100,53 @@ public class request_Fragment extends Fragment {
 
             }
         };
+        recycle_menu.addOnItemTouchListener(
+                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        System.out.print("ÄAAAA");
+                        // do whatever
 
+                        final String SID = ((TextView)view.findViewById(R.id.serviceID)).getText().toString();
+                        final String furtherStatus = ((TextView)view.findViewById(R.id.TheFurtherStatus)).getText().toString();
+                        final String status = ((TextView)view.findViewById(R.id.TheStatus1)).getText().toString();
+                        final String addressInfo = ((TextView)view.findViewById(R.id.TheLocation1)).getText().toString();
+                        final String JobName  = ((TextView)view.findViewById(R.id.TheJobName1)).getText().toString();
+                        final String NoOfGuard = ((TextView)view.findViewById(R.id.TheNoOfGuard1)).getText().toString();
+                        final String theDate = ((TextView)view.findViewById(R.id.TheDate1)).getText().toString();
+
+                        if(furtherStatus.equals("New!")) {
+
+
+
+
+
+
+                        }else if (furtherStatus.equals("Quoted")){
+
+
+                            Intent myIntent = new Intent(request_Fragment.this.getActivity(), Offers.class);
+                            myIntent.putExtra("ServiceID", SID);
+                            myIntent.putExtra("furtherStatus", furtherStatus);
+                            myIntent.putExtra("status", status);
+                            myIntent.putExtra("addressInfo", addressInfo);
+                            myIntent.putExtra("JobName", JobName);
+                            myIntent.putExtra("NoOfGuard", NoOfGuard);
+                            myIntent.putExtra("theDate", theDate);
+                            System.out.println("Services IDDDD:"+SID+":End");
+                            startActivity(myIntent);
+
+                        }
+
+
+
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                        System.out.print("BBBBB");
+                    }
+                })
+        );
 
         recycle_menu.setAdapter(adapter);
 

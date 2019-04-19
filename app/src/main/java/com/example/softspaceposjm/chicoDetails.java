@@ -73,7 +73,7 @@ public class chicoDetails extends AppCompatActivity {
 
                     }
                 });
-                startActivity(new Intent(chicoDetails.this, bookingSuccess.class));
+                startActivity(new Intent(chicoDetails.this, ServiceBooked.class));
 
             }
         });

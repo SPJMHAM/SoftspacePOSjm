@@ -39,7 +39,7 @@ public class serviceInfo_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_service_info_);
 
         final String TestCurrentUser;
-        TestCurrentUser = CUser.currentUser.getUserName();
+        TestCurrentUser = "ggggjhjh";
         database = FirebaseDatabase.getInstance();
         userRef = database.getReference("User");
         service = database.getReference("service_Info");

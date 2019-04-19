@@ -22,12 +22,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".services.req_done">
-
-        </activity>
-        <activity android:name=".services.req_comfirm">
-
-        </activity>
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,13 +35,13 @@
         <activity android:name=".Registration" />
         <activity android:name=".services.service2_Activity" />
         <activity android:name=".services.serviceInfo_Activity" />
-        <activity android:name=".Midguard_customer_dashboard" />
-        <activity android:name=".services.Services_Activity" />
-        <activity android:name=".TestM1" />
-        <activity android:name=".Details" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2" />
+
+        <activity android:name=".services.Services_Activity" >
+
+    </activity>
+        <activity android:name=".services.TestM1" >
+
+    </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -67,18 +61,12 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".ShowMap" />
-        <activity android:name=".security_guard_info1" />
-        <activity android:name=".sea_services" />
-        <activity android:name=".user_dashboard" />
-        <activity android:name=".login_page1" />
-        <activity android:name=".user_signup" />
         <activity android:name=".services.confirmation" />
         <activity android:name=".PermissionAccess" >
 
         </activity>
         <activity android:name=".FingerprintAccess" />
         <activity android:name=".RegistrationComplete" />
-        <activity android:name=".DetailsPage1" />
         <activity android:name=".MainActivity" />
         <activity android:name=".chicoDetails">
 

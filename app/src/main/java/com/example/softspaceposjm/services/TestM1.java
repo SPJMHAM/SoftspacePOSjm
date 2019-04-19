@@ -1,4 +1,4 @@
-package com.example.softspaceposjm;
+package com.example.softspaceposjm.services;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,16 +11,16 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.softspaceposjm.Common.CUser;
 import com.example.softspaceposjm.Model.service_Info;
-import com.example.softspaceposjm.services.service2_Activity;
+import com.example.softspaceposjm.R;
+import com.example.softspaceposjm.Req_Service.status;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -50,7 +50,8 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
     TextView placeNameText;
     TextView placeAddressText;
     WebView attributionText;
-    Button getPlaceButton,btnMNext;
+    Button getPlaceButton;
+    ImageView btnMNext, back;
     private final static int MY_PERMISSION_FINE_LOCATION = 101;
     private final static int PLACE_PICKER_REQUEST = 1;
 
@@ -75,9 +76,9 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
 
         placeNameText = (TextView) findViewById(R.id.tvPlaceName);
         placeAddressText = (TextView) findViewById(R.id.tvPlaceAddress);
-        attributionText = (WebView) findViewById(R.id.wvAttribution);
         getPlaceButton = (Button) findViewById(R.id.btGetPlace);
-        btnMNext = (Button)findViewById(R.id.btnMNext);
+        btnMNext = findViewById(R.id.btnMNext);
+        back = findViewById(R.id.backBTN);
 
 
         database = FirebaseDatabase.getInstance();
@@ -112,7 +113,12 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
 //        startActivity(intent);
 //        finish();
 //tvPlaceAddress
-
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(TestM1.this, serviceInfo_Activity.class));
+                }
+            });
 
 
 
@@ -275,7 +281,8 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                 placeAddressText.setText(place.getAddress());
 
                 final String TestCurrentUser;
-                TestCurrentUser = CUser.currentUser.getUserName();
+                //TestCurrentUser = CUser.currentUser.getUserName();
+                TestCurrentUser = "ggggjhjh";
                 Intent b = this.getIntent();
 
                 final String type = b.getStringExtra("Type");

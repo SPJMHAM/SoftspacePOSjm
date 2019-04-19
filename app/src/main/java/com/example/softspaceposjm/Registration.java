@@ -46,7 +46,7 @@ public class Registration extends AppCompatActivity {
         edtPassword = (EditText)findViewById(R.id.edtPassword);
         edtConfirmPassword = (EditText)findViewById(R.id.edtConfirmPassword);
         edtEmail = (EditText)findViewById(R.id.edtEmail);
-        btnRegister = (Button)findViewById(R.id.btnRegister);
+//        btnRegister = (Button)findViewById(R.id.btnRegister);
         back = findViewById(R.id.backBtn);
        // btnLogin = (Button)findViewById(R.id.btnLogin);
         System.out.println("Test329y932493229834");

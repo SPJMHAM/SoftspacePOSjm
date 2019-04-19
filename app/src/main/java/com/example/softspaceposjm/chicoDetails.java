@@ -65,7 +65,8 @@ public class chicoDetails extends AppCompatActivity {
 
 
                             startActivity(new Intent(chicoDetails.this, bookingSuccess.class));
-
+                            finish();
+                            service_Info1.removeEventListener(this);
 
                         return;
                     }
@@ -73,8 +74,6 @@ public class chicoDetails extends AppCompatActivity {
 
                     }
                 });
-                onStop();
-                onDestroy();
 
             }
         });

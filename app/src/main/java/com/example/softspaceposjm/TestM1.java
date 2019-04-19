@@ -294,7 +294,7 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
 
                         startActivity(new Intent(TestM1.this, service2_Activity.class));
                       //  service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
-                        service_Info.LogFirebase(service, userRef, TestCurrentUser, type, nationality,getStatus, NoOfGuards1,Address1, reqDate, jobTitle,furtherStatus);
+                        service_Info.LogFirebase(service, userRef, "ggggjhjh", type, nationality,getStatus, NoOfGuards1,Address1, reqDate, jobTitle,furtherStatus);
                     }
                 });
 

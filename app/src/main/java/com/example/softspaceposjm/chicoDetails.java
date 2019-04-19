@@ -70,6 +70,7 @@ public class chicoDetails extends AppCompatActivity {
                         return;
 
                     }
+
                     public void onCancelled(DatabaseError databaseError){
 
                     }

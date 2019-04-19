@@ -72,6 +72,7 @@
         <activity android:name=".user_dashboard" />
         <activity android:name=".login_page1" />
         <activity android:name=".user_signup" />
+        <activity android:name=".services.confirmation" />
         <activity android:name=".PermissionAccess" >
 
         </activity>
@@ -91,6 +92,8 @@
         <activity android:name=".ServiceBooked">
 
         </activity>
+        <activity android:name=".services.requestSuccess" />
+
     </application>
 
 </manifest>

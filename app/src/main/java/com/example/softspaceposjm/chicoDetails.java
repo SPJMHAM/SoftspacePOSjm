@@ -56,16 +56,16 @@ public class chicoDetails extends AppCompatActivity {
                         //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
                       //  if(status.equals("Request")) {
-                        if(status!="booked") {
+
                             service_Info SInfo = new service_Info("ggggjhjh", ServiceID, "Armed", "Foreigners", "booked", NoOfGuard, addressInfo, theDate, JobName, "");
 
                             service_Info1.child(ServiceID).setValue(SInfo);
 //                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
                             //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
 
-                        }else{
-                            startActivity(new Intent(chicoDetails.this, chicoDetails.class));
-                        }
+
+                            startActivity(new Intent(chicoDetails.this, bookingSuccess.class));
+
 
                         return;
                     }
@@ -73,7 +73,8 @@ public class chicoDetails extends AppCompatActivity {
 
                     }
                 });
-                startActivity(new Intent(chicoDetails.this, ServiceBooked.class));
+                onStop();
+                onDestroy();
 
             }
         });

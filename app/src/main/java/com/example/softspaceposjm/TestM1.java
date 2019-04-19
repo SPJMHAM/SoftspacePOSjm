@@ -275,7 +275,8 @@ public class TestM1 extends FragmentActivity implements OnMapReadyCallback,
                 placeAddressText.setText(place.getAddress());
 
                 final String TestCurrentUser;
-                TestCurrentUser = CUser.currentUser.getUserName();
+                //TestCurrentUser = CUser.currentUser.getUserName();
+                TestCurrentUser = "ggggjhjh";
                 Intent b = this.getIntent();
 
                 final String type = b.getStringExtra("Type");

@@ -36,14 +36,14 @@ public class Login extends AppCompatActivity {
         edtPassword = (EditText) findViewById(R.id.password);
         btn_login = findViewById(R.id.loginBtn);
         btn_register = (Button) findViewById(R.id.regBtn);
-
+        btn_register.setPaintFlags(btn_register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User1");
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn_register.setPaintFlags(btn_register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
                 startActivity(new Intent(Login.this, Registration.class));
             }
         });

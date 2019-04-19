@@ -1,6 +1,7 @@
 package com.example.softspaceposjm;
 
 import com.example.softspaceposjm.Model.User;
+import com.example.softspaceposjm.Req_Service.status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -19,12 +20,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
     EditText edtUserName,edtICno,edtAddress,edtPassword,edtConfirmPassword,edtEmail;
     Button btnRegister, btnLogin;
-    ImageButton btnNext,image;
+    ImageView image;
+    ImageView btnNext, back;
     String matchPassword ;
     String matchPassword1 ;
 
@@ -34,7 +37,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        btnNext = (ImageButton)findViewById(R.id.btn_next);
+        btnNext = findViewById(R.id.btn_next);
         image = findViewById(R.id.imageButton2);
         // edtName = (MaterialEditText)findViewById(R.id.edtName);
         edtUserName = (EditText)findViewById(R.id.edtUserName);
@@ -44,6 +47,7 @@ public class Registration extends AppCompatActivity {
         edtConfirmPassword = (EditText)findViewById(R.id.edtConfirmPassword);
         edtEmail = (EditText)findViewById(R.id.edtEmail);
         btnRegister = (Button)findViewById(R.id.btnRegister);
+        back = findViewById(R.id.backBtn);
        // btnLogin = (Button)findViewById(R.id.btnLogin);
         System.out.println("Test329y932493229834");
 
@@ -100,6 +104,17 @@ public class Registration extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivity(intent);
+                    }
+                });
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Registration.this, Login.class));
                     }
                 });
             }

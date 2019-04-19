@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class bookingSuccess extends AppCompatActivity {
-
-    private Button btn_book, home;
+    private ImageView btn_book;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

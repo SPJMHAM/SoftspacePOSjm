@@ -41,7 +41,7 @@ public class service2_Activity extends AppCompatActivity implements DatePickerDi
         BtnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(service2_Activity.this, req_done.class));
+                startActivity(new Intent(service2_Activity.this, confirmation.class));
             }
         });
     }
